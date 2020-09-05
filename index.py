@@ -74,20 +74,21 @@ class LinkedList(object):
         while node != None:
             print({"data: " + str(self.__last.data)})
             node = node.next
+            
+if __name__ == "__main__":
+    # Instancia de la clase
+    linkedList = LinkedList()
 
- # Instancia de la clase
-linkedList = LinkedList()
+    # Valores
+    linkedList.addAtEnd(7)
+    linkedList.addAtFront(5)
+    linkedList.addAtEnd(8)
+    linkedList.addAtEnd(9)
+    linkedList.addAtEnd(3)
+    linkedList.addAtFront(10)
 
-# Valores
-linkedList.addAtEnd(7)
-linkedList.addAtFront(5)
-linkedList.addAtEnd(8)
-linkedList.addAtEnd(9)
-linkedList.addAtEnd(3)
-linkedList.addAtFront(10)
-
-# Métodos
-print(linkedList.find(3))
-print(linkedList.getLastNode())
-linkedList.printList()
+    # Métodos
+    print(linkedList.find(3))
+    print(linkedList.getLastNode())
+    linkedList.printList()
 
