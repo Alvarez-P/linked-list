@@ -7,7 +7,7 @@ class Node:
 # Creamos la clase LinkedList
 class LinkedList(object):
     def __init__(self, node = None):
-        """Se asigna como None como Nodo inicial y final, se define el tamaño de la lista en cero"""
+        """Se asigna None como Nodo inicial y final, se define el tamaño de la lista en cero"""
         self.__last = self.__head = node 
         self.__length = 0
 
@@ -19,31 +19,31 @@ class LinkedList(object):
         """Devuelve el ultimo dato de la lista"""
         return {"last: " + str(self.__last.data)}
 
-    def addAtFront(self, d):
+    def addAtFront(self, newData):
         """Agrega un nodo al inicio de la lista enlazada"""
-        self.__head = Node(data = d, next=self.__head)
+        self.__head = Node(data = newData, next = self.__head)
         self.__length += 1
         if self.__last == None:
             self.__last = self.__head
             return True
         
-    def addAtEnd(self, data):
+    def addAtEnd(self, newData):
         """Agrega un nodo al final de la lista enlazada"""
         if not self.__head:
-            self.__last = self.__head = Node(data=data)
+            self.__last = self.__head = Node(data = newData)
             return
         curr = self.__head
         while curr.next:
             curr = curr.next
-        self.__last = curr.next = Node(data=data)
+        self.__last = curr.next = Node(data = newData)
 
-    def deleteNode(self, d):
-        """Se elimina el nodo que tenga el dato d"""
+    def deleteNode(self, dataToRemove):
+        """Se elimina el nodo que tenga el dato guardado en dataToRemove"""
         currentNode = self.__head
         prevNode = None
 
         while currentNode:
-            if currentNode.data == d:
+            if currentNode.data == dataToRemove:
                 if prevNode:
                     # Se asigna al apuntador proximo del nodo anterior, al proximo de nodo actual.
                     prevNode.next = currentNode.next
@@ -56,12 +56,12 @@ class LinkedList(object):
                 prevNode = currentNode
                 currentNode = currentNode.next
 
-    def find(self,d):
+    def find(self, dataToSearch):
         """Se busca d en la lista enlazada, si existe devuelve d, si no devuelve None"""
         currentNode = self.__head
         count = 0
         while currentNode:
-            if currentNode.data == d:
+            if currentNode.data == dataToSearch:
                 return { "data": currentNode.data, "position": count }
             else:
                 currentNode = currentNode.next
