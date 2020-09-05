@@ -45,11 +45,11 @@ class LinkedList(object):
         while currentNode:
             if currentNode.data == d:
                 if prevNode:
-                    # Se asigna  al apuntador proximo del nodo anterior el proximo de nodo actual
+                    # Se asigna al apuntador proximo del nodo anterior, al proximo de nodo actual.
                     prevNode.next = currentNode.next
                 else:
                     self.__head = currentNode.next
-                #En cualquiera de los dos casos se decrementa el tamaño de la lista.
+                # En cualquiera de los dos casos se decrementa el tamaño de la lista.
                 self.__length -= 1
                 return True
             else:
@@ -74,7 +74,7 @@ class LinkedList(object):
         while node != None:
             print({"data: " + str(self.__last.data)})
             node = node.next
-            
+
 if __name__ == "__main__":
     # Instancia de la clase
     linkedList = LinkedList()
