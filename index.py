@@ -7,8 +7,7 @@ class Node:
 # Creamos la clase LinkedList
 class LinkedList(object):
     def __init__(self, node = None):
-        """Se asigna como Nodo inicial a primero y ultimo por que apuntan al mismo nodo
-        y se define el tamagno de la lista en cero"""
+        """Se asigna como None como Nodo inicial y final, se define el tamaño de la lista en cero"""
         self.__last = self.__head = node 
         self.__length = 0
 
@@ -18,7 +17,7 @@ class LinkedList(object):
     
     def getLastNode(self):
         """Devuelve el ultimo dato de la lista"""
-        return "Last: " + str(self.__last.data) 
+        return {"last: " + str(self.__last.data)}
 
     def addAtFront(self, d):
         """Agrega un nodo al inicio de la lista enlazada"""
@@ -73,10 +72,8 @@ class LinkedList(object):
     def printList(self):
         node = self.__head
         while node != None:
-            print(node.data)
+            print({"data: " + str(self.__last.data)})
             node = node.next
-
-
 
  # Instancia de la clase
 linkedList = LinkedList()
